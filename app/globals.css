@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #faf9f6;
+  --white: #ffffff;
+  --ink: #0d0d0d;
+  --ink2: #3a3a3a;
+  --ink3: #6b6b6b;
+  --border: #e4e2dc;
+  --border2: #d0cec7;
+  --blue: #1a6bff;
+  --blue-bg: #eef3ff;
+  --green: #1a9e5c;
+  --green-bg: #edfbf3;
+  --red: #e03e3e;
+  --red-bg: #fef0f0;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+}
+
+/* ── SCROLLBAR ────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d0cec7; border-radius: 3px; }
+
+/* ── FORM ELEMENTS ───────────────────────────── */
+input, select, textarea {
+  font-family: 'DM Sans', sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--blue) !important;
+}
+
+/* ── ANIMATIONS ──────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in  { animation: fadeIn  0.2s ease-out both; }
+.animate-slide-up { animation: slideUp 0.25s ease-out both; }
+.animate-toast    { animation: toastIn 0.25s ease-out both; }
+
+/* ── MODAL BACKDROP ──────────────────────────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── AVATAR COLORS ───────────────────────────── */
+.av-0 { background: #1a6bff; }
+.av-1 { background: #1a9e5c; }
+.av-2 { background: #d97706; }
+.av-3 { background: #9333ea; }
+.av-4 { background: #e03e3e; }
+.av-5 { background: #0891b2; }
+.av-6 { background: #be185d; }
+.av-7 { background: #059669; }
